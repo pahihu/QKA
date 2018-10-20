@@ -155,9 +155,7 @@ vs:{:[(`~x)&4=4:y;vss[y];vs2[x;y]]}
 vsc:{256_vs x} / cvt bytes
 vsb:{2_vs x} / cvt bits
 wavg:{x:x[&~null x];y:y[&~null y]; (+/(x*y))%0.++/x}
-
-
-where: &:
+where:{:[5=4:x;,/(x[])#'!x;&:x]}
 
 id:{((x-1)-!x)!'x#,((x-1)#0),1}
 

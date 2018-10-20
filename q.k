@@ -31,7 +31,7 @@ div:{_ x%y}
 ema:{1_{z+y*x}\[*y;1-x;x*y]}
 enlist: ,:
 / 7 - eval, 6 - val, 5 - val, 4 - val, 3 - eval...
-eval0:{:[#x;value@eval'x;x]}
+eval0:{:[1=#x;*x;1<#x;value@eval'x;x]}
 eval:{:[0=(xt:4:x);eval0 x;3<xt;value[x];x]}
 value0:{:[5=xt:4:x;x[];4=xt;.:x;3=_abs xt;.:x;x]}
 value:{:[0=xt:4:x;.[value0[*x];1_ x];value0[x]]}
@@ -141,6 +141,13 @@ join:{:[5=4:x;tjoin[x;y];x,y]}
 union:{?(value x),value y}
 tunion:{if[~(!x)~cols:!y;:`domain]; cols!+union[+x[];+y[]]}
 upper:{i:&(123>d)&96<(d:_ic$x);d[i]-:32;:[4=4:x;`$_ci d;_ci d]}
+/ (`view;_n;(+;1;`a);,`a;"1+a")
+mkv:{(`view;_n;();x;y)}
+view:{x[4]}
+isview:{if[4:x;:0]; if[~5=#x;:0]; `view~*x}
+views:{d:.`.k; s:(!d)@&isview'd[]; s[<s]}
+
+
 where: &:
 
 id:{((x-1)-!x)!'x#,((x-1)#0),1}

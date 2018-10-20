@@ -148,6 +148,13 @@ isview:{if[4:x;:0]; if[~5=#x;:0]; `view~*x}
 views:{d:.`.k; v:(!d)@&isview'd[]; v[<v]}
 pending:{d:.`.k; d[x;1]~\:_n}
 sysB:{v:views[]; v[&pending v]};
+vsp:{d:-1_ x; b:*:-1#x; `$("/"/d;b)}
+vss:{s:$x; :[(#s)>s?"/";vsp@"/"\s;`$"."\$x]}
+vs2:{if[`~x;x:"\n"];:[3=_abs 4:x;x\$y;(0=4:y)|-1=4:y;+x _vs ,/y;x _vs y]}
+vs:{:[(`~x)&4=4:y;vss[y];vs2[x;y]]}
+vsc:{256_vs x} / cvt bytes
+vsb:{2_vs x} / cvt bits
+wavg:{x:x[&~null x];y:y[&~null y]; (+/(x*y))%0.++/x}
 
 
 where: &:

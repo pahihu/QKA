@@ -145,7 +145,9 @@ upper:{i:&(123>d)&96<(d:_ic$x);d[i]-:32;:[4=4:x;`$_ci d;_ci d]}
 mkv:{(`view;_n;();x;y)}
 view:{x[4]}
 isview:{if[4:x;:0]; if[~5=#x;:0]; `view~*x}
-views:{d:.`.k; s:(!d)@&isview'd[]; s[<s]}
+views:{d:.`.k; v:(!d)@&isview'd[]; v[<v]}
+pending:{d:.`.k; d[x;1]~\:_n}
+sysB:{v:views[]; v[&pending v]};
 
 
 where: &:

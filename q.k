@@ -11,6 +11,7 @@ avg:{(+/x)%0.+#x}
 avgs:{(+\x)%1.0+!#x}
 var:{x:x[&~null x]; avg _sqr x-avg x} / D.Sasha
 dev:{_sqrt var x}
+cols:{!x}
 cov:{avg[x*y]-avg[x]*avg[y]}
 cor:{cov[x;y]%dev[x]*dev[y]}
 count: #:
@@ -156,6 +157,15 @@ vsc:{256_vs x} / cvt bytes
 vsb:{2_vs x} / cvt bits
 wavg:{x:x[&~null x];y:y[&~null y]; (+/(x*y))%0.++/x}
 where:{:[5=4:x;,/(x[])#'!x;&:x]}
+within2:{(~y>x)&~x>z}
+within:{:[0=4:y;x{within[x;y]}'+y;within2[x;y@0;y@1]]}
+wsum:{+/x*0.+y}
+xasc:{{(!x)!x[;<x@y]}/[y;|x]}
+xbar:{x*_(0.+y)%x}
+xcol:{(x,((#x)_!y))!y[]}
+xcols:{h:(x,except[!y;x]); (h)!y[h]}
+xdesc:{{(!x)!x[;>x@y]}/[y;|x]}
+xexp:{x^y}
 
 id:{((x-1)-!x)!'x#,((x-1)#0),1}
 

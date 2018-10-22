@@ -9,6 +9,7 @@ asin:_asin
 atan:_atan
 avg:{(+/x)%0.+#x}
 avgs:{(+\x)%1.0+!#x}
+bin:{if[y<*x;:-1]; :[0>4:y;x _binl y;x _bin y]}
 var:{x:x[&~null x]; avg _sqr x-avg x} / D.Sasha
 dev:{_sqrt var x}
 cols:{!x}
@@ -22,13 +23,14 @@ csv: ","
   quot:{:[(#x)>x?y;qq,_ssr[x;qq;dqq],qq;x]}
 delim:{[sep;rows] sep/'{quot[x;sep]}'/:$rows}
 prepare:{delim[x;flip y]}
+cut:{:[1=4:x;(0,x*1+!(#y)%x)_ y;x _ y]}
 deltas2:{-':x,y}
 deltas:{deltas2[0;x]}
 desc:{x@>x}
 differ:{1,~~':x}
 tdistinct:{(!x)!+?+x[]}
 distinct:{:[5=4:x;tdistinct[x];?x]}
-div:{_ x%y}
+div:{if[3=_abs 4:x;x:_ic x]; x%y}
 ema:{1_{z+y*x}\[*y;1-x;x*y]}
 enlist: ,:
 / 7 - eval, 6 - val, 5 - val, 4 - val, 3 - eval...

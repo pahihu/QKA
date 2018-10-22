@@ -4,12 +4,17 @@ Q on KonA. You can use `q.k` with the [**misc_fixes**](https://github.com/pahihu
 Examples:
 
    / use lambda directly
+
    1{x+y}2
+
    3
 
    / rename + verb
+
    f: +
+
    1 f 2
+
    3
 
 **NOTE**: Use the code! Good luck!

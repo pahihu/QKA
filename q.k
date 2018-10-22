@@ -92,7 +92,7 @@ mod:{x!y}
 sum:{+/fill[0;x]}
 msum:{sum'swin[x;fill[0;y]]}
 neg: -:
-NUL:(();0N;0n;"";`)
+NUL:(();0N;0n;" ";`)
 next:{i:1!!#x; x[0]:NUL[_abs 4:x]; x@i}
 prev:{i:-1!!#x; x[-1+#x]:NUL[_abs 4:x]; x@i}
 not: ~:
@@ -169,6 +169,9 @@ xcols:{h:(x,except[!y;x]); (h)!y[h]}
 xdesc:{{(!x)!x[;>x@y]}/[y;|x]}
 xexp:{x^y}
 xgroup:{h:except[!y;x]; (x,h)!(,?+y[x]),y[h;=+y[x]]}
+xlog:{(_log y)%_log x}
+xprev:{n:(_abs x)#NUL[_abs 4:y]; :[x<0;(-#y)#y,n;(#y)#n,y]}
+xrank:{_(<:<:y)%((#y)%0.+x)}
 
 id:{((x-1)-!x)!'x#,((x-1)#0),1}
 

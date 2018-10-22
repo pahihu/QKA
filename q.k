@@ -17,7 +17,7 @@ cov:{avg[x*y]-avg[x]*avg[y]}
 cor:{cov[x;y]%dev[x]*dev[y]}
 count: #:
 cos:_cos
-cross:{,/x,\:/:y}
+cross:{:[0<4:y;x,\:y;,/x,/:\:y]}
 csv: ","
   dqq:qq,(qq:"\"")
   quot:{:[(#x)>x?y;qq,_ssr[x;qq;dqq],qq;x]}
@@ -168,6 +168,7 @@ xcol:{(x,((#x)_!y))!y[]}
 xcols:{h:(x,except[!y;x]); (h)!y[h]}
 xdesc:{{(!x)!x[;>x@y]}/[y;|x]}
 xexp:{x^y}
+xgroup:{h:except[!y;x]; (x,h)!(,?+y[x]),y[h;=+y[x]]}
 
 id:{((x-1)-!x)!'x#,((x-1)#0),1}
 

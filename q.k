@@ -1,4 +1,5 @@
-/ q wrappers 20181016
+/ q wrappers
+/ NB. KonA datatypes, arithmetic and corner cases are different.
 abs:{x[&x<0]-:;x}
 acos:_acos
 all:{&/~0=x}

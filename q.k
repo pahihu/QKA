@@ -50,7 +50,7 @@ flip:{:[5=4:x;(,!x),+x[];+x]}
 floor: _:
 get: 1::
 getenv: _getenv
-group:{.+(`$'x@*:'r;r:=x)}
+group:{(`$$x@*:'r)!r:=x}
 gtime: _gtime
 hcount:{_ _size x}
 system:{ ."\\",x}
